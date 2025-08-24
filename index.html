@@ -389,6 +389,7 @@
             </div>
 
             <hr>
+<div class="section">
          /* ====================
             후기 섹션 스타일 (가장 상단에 위치)
             ==================== */
@@ -408,7 +409,7 @@
                 </div>
             </div>
 
-            <hr>*/
+            <hr>*/</div>
 
             <div class="section">
                 <h2>자주 묻는 질문</h2>
@@ -457,7 +458,7 @@
             const productDetails = document.getElementById('product-details');
 
             mainCtaButton.addEventListener('click', function(e) {
-                e.preventDefault(); // 기본 앵커 동작 방지
+                e.preventDefault(); // 기본 앵커 동작 방지 <-- 
                 productDetails.style.display = 'block'; // 상세 내용 보이게 하기
                 // 부드럽게 스크롤
                 productDetails.scrollIntoView({
