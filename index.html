@@ -1,615 +1,355 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>15분 완성 와인 키트 상세 페이지</title>
-    <!-- 폰트 및 기본 스타일 설정 -->
-    <style>
-        /* ====================
-           기본 레이아웃 및 폰트 스타일
-           ==================== */
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
-        
-        body {
-            font-family: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-            color: #333;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15분 완성 와인 키트 상세 페이지</title>
+        <style>
+        /* ====================
+           기본 레이아웃 및 폰트 스타일
+           ==================== */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
 
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 0 20px;
-        }
-        
-        /* ====================
-           히어로 섹션 스타일 (가장 상단에 위치)
-           ==================== */
-        .hero-section {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            height: 80vh; /* 화면 높이의 80% */
-            /* 이미지 경로 수정: GitHub Pages에 올릴 때 상대 경로로 사용 */
-            background-image: url('01.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            color: #fff;
-            padding: 20px;
-        }
-        
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.4); /* 이미지 위에 살짝 어두운 오버레이 */
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 10;
-        }
-        
-        .hero-title {
-            font-size: 3.5em;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            /* 수정: 영웅 섹션 텍스트를 보이게 함 */
-            visibility: visible;
-            height: auto;
-            margin: 0;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.5em;
-            font-weight: 300;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-            /* 수정: 영웅 섹션 텍스트를 보이게 함 */
-            visibility: visible;
-            height: auto;
-            margin: 0;
-        }
-        
-        .main-cta-button {
-            padding: 15px 30px;
-            background-color: #A0522D;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        
-        .main-cta-button:hover {
-            background-color: #8B4513;
-            transform: translateY(-2px);
-        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        
+        /* ====================
+           히어로 섹션 스타일 (가장 상단에 위치)
+           ==================== */
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 80vh; /* 화면 높이의 80% */
+            /* 이미지 경로 수정: GitHub Pages에 올릴 때 상대 경로로 사용 */
+            background-image: url('01.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* 이미지 위에 살짝 어두운 오버레이 */
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero-title {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            /* 수정: 영웅 섹션 텍스트를 보이게 함 */
+            visibility: visible;
+            height: auto;
+            margin: 0;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5em;
+            font-weight: 300;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            /* 수정: 영웅 섹션 텍스트를 보이게 함 */
+            visibility: visible;
+            height: auto;
+            margin: 0;
+        }
+        
+        .main-cta-button {
+            padding: 15px 30px;
+            background-color: #A0522D;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .main-cta-button:hover {
+            background-color: #8B4513;
+            transform: translateY(-2px);
+        }
 
-        /* ====================
-           푸터 (회사 정보) 스타일
-           ==================== */
-        .footer {
-            background-color: #f8f8f8;
-            color: #777;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 50px;
-            font-size: 0.9em;
-        }
-        
-        .footer p {
-            margin: 5px 0;
-        }
-        
-        .footer a {
-            color: #777;
-            text-decoration: none;
-        }
+        /* ====================
+           푸터 (회사 정보) 스타일
+           ==================== */
+        .footer {
+            background-color: #f8f8f8;
+            color: #777;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+        
+        .footer p {
+            margin: 5px 0;
+        }
+        
+        .footer a {
+            color: #777;
+            text-decoration: none;
+        }
 
-        /* ====================
-           기타 요소 스타일
-           ==================== */
-        h1, h2, h3 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        
-        h1 { font-size: 2.5em; }
-        h2 { font-size: 2em; }
-        
-        .section {
-            margin: 80px 0;
-            text-align: center;
-        }
-        
-        hr {
-            border: none;
-            border-top: 1px solid #eee;
-            margin: 60px auto;
-            width: 50%;
-        }
+        /* ====================
+           기타 요소 스타일
+           ==================== */
+        h1, h2, h3 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        h1 { font-size: 2.5em; }
+        h2 { font-size: 2em; }
+        
+        .section {
+            margin: 80px 0;
+            text-align: center;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 60px auto;
+            width: 50%;
+        }
 
-        /* ====================
-           동영상 및 이미지 컨테이너
-           ==================== */
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 비율 (9 / 16 * 100%) */
-            height: 0;
-            overflow: hidden;
-            margin: 20px 0;
-            border-radius: 8px;
-        }
-        
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        /* 수정: 이미지가 더 크게 보일 수 있도록 스타일 조정 */
-        .image-container {
-            width: 100%;
-            height: auto;
-            margin: 20px 0;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 이미지가 돋보이도록 그림자 추가 */
-        }
+        /* ====================
+           동영상 및 이미지 컨테이너
+           ==================== */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 비율 (9 / 16 * 100%) */
+            height: 0;
+            overflow: hidden;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* 수정: 이미지가 더 크게 보일 수 있도록 스타일 조정 */
+        .image-container {
+            width: 100%;
+            height: auto;
+            margin: 20px 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* 이미지가 돋보이도록 그림자 추가 */
+        }
 
-        .image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover; /* 이미지가 컨테이너에 꽉 차도록 */
-        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover; /* 이미지가 컨테이너에 꽉 차도록 */
+        }
 
-        /* ====================
-           텍스트 스타일
-           ==================== */
-        .body-text {
-            font-size: 1.2em;
-            font-weight: 400;
-            margin-top: 10px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            text-align: center;
-        }
-        
-        .caption {
-            font-size: 1em;
-            font-weight: 300;
-            margin-top: 10px;
-            color: #777;
-        }
-        
-        .body-text strong {
-            font-weight: 700;
-        }
+        /* ====================
+           텍스트 스타일
+           ==================== */
+        .body-text {
+            font-size: 1.2em;
+            font-weight: 400;
+            margin-top: 10px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        
+        .caption {
+            font-size: 1em;
+            font-weight: 300;
+            margin-top: 10px;
+            color: #777;
+        }
+        
+        .body-text strong {
+            font-weight: 700;
+        }
 
-        /* ====================
-           후기 섹션 스타일
-           ==================== */
-        .review-flex-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-        
-        .review-box {
-            border: 1px solid #eee;
-            border-radius: 8px;
-            padding: 20px;
-            margin-top: 20px;
-            text-align: left;
-            background-color: #fefefe;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            width: 100%;
-        }
-        
-        .review-text {
-            font-size: 1.1em;
-            line-height: 1.5;
-        }
-        
-        .review-author {
-            font-size: 0.9em;
-            font-weight: 500;
-            color: #999;
-            margin-top: 15px;
-        }
+        /* ====================
+           후기 섹션 스타일
+           ==================== */
+        .review-flex-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .review-box {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: left;
+            background-color: #fefefe;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            width: 100%;
+        }
+        
+        .review-text {
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+        
+        .review-author {
+            font-size: 0.9em;
+            font-weight: 500;
+            color: #999;
+            margin-top: 15px;
+        }
 
-        /* 수정: 모든 이미지를 크게 보이도록 변경 */
-        .review-image {
-            width: 100%;
-            height: auto; /* 고정된 높이를 없애고 비율에 맞게 늘어나게 함 */
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-        
-        /* ====================
-           FAQ 섹션 스타일
-           ==================== */
-        .faq-item {
-            border-bottom: 1px solid #eee;
-            padding: 15px 0;
-            text-align: left;
-            cursor: pointer;
-            user-select: none;
-        }
-        
-        .faq-question {
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .faq-question:hover {
-            color: #A0522D;
-        }
-        
-        .faq-answer {
-            display: none;
-            margin-top: 10px;
-            color: #555;
-            line-height: 1.4;
-        }
+        /* 수정: 모든 이미지를 크게 보이도록 변경 */
+        .review-image {
+            width: 100%;
+            height: auto; /* 고정된 높이를 없애고 비율에 맞게 늘어나게 함 */
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        /* ====================
+           FAQ 섹션 스타일
+           ==================== */
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+            text-align: left;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .faq-question {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .faq-question:hover {
+            color: #A0522D;
+        }
+        
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+            color: #555;
+            line-height: 1.4;
+        }
 
-        /* ====================
-           반응형 디자인 (미디어 쿼리)
-           ==================== */
-        @media (min-width: 768px) {
-            .review-flex-container {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-            .review-box {
-                flex: 1;
-            }
-        }
-        
-        /* 추가된 CSS: 기본적으로 상세 내용을 숨김 */
-        #product-details {
-            display: none;
-        }
-    </style>
+        /* ====================
+           반응형 디자인 (미디어 쿼리)
+           ==================== */
+        @media (min-width: 768px) {
+            .review-flex-container {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .review-box {
+                flex: 1;
+            }
+        }
+        
+        /* 추가된 CSS: 기본적으로 상세 내용을 숨김 */
+        #product-details {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <!-- ====================
-         히어로 섹션: 새로운 첫 페이지
-         ==================== -->
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1 class="hero-title">나만의 와인을<br>가장 쉽게 만드는 방법</h1>
-            <p class="hero-subtitle">15분 완성 와인 키트로<br>와인 한 병의 즐거움을 경험해 보세요.</p>
-            <a href="#product-details" class="main-cta-button">자세히 보기</a>
-        </div>
-    </section>
+        <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">나만의 와인을<br>가장 쉽게 만드는 방법</h1>
+            <p class="hero-subtitle">15분 완성 와인 키트로<br>와인 한 병의 즐거움을 경험해 보세요.</p>
+            <a href="#product-details" class="main-cta-button">자세히 보기</a>
+        </div>
+    </section>
 
-    <div class="container" id="main-content">
-        <!-- ====================
-             제품 상세 페이지 섹션 (기존 코드)
-             ==================== -->
-        <div class="section" id="product-details">
-            <h2>와인 키트, 이렇게 쉽습니다</h2>
-            <p class="body-text">복잡한 과정, 긴 시간은 이제 잊으세요.<br>단 15분, 4단계면 충분합니다.</p>
-            <!-- ====================
-                 동영상 섹션
-                 ==================== -->
-            <div class="section">
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/L1QJ0v-G-44" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
+    <div class="container" id="main-content">
+                <div class="section" id="product-details">
+            <h2>와인 키트, 이렇게 쉽습니다</h2>
+            <p class="body-text">복잡한 과정, 긴 시간은 이제 잊으세요.<br>단 15분, 4단계면 충분합니다.</p>
+                        <div class="section">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/L1QJ0v-G-44" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
 
-            <!-- ====================
-                 복구된 '브랜드 스토리' 섹션 - 위치 변경
-                 ==================== -->
-            <div class="section">
-                <h2>브랜드 스토리</h2>
-                <p class="body-text">
-                    <strong>
-                        집에서 만드는 와인, 꿈만 꾸셨나요?<br>
-                        이제 누구나 마스터가 될 수 있습니다.
-                    </strong>
-                    <br><br>
-                    저희는 수년간의 연구 끝에 가장 쉽고 완벽한 와인 메이킹 키트를 개발했습니다.
-                    복잡한 장비 없이, 오직 이 키트 하나로 당신의 공간을 근사한 와이너리로 만들어 보세요.
-                </p>
-                <div class="image-container">
-                    <img src="https://placehold.co/800x600/8B4513/ffffff?text=Brand+Story" alt="와인 메이커스 브랜드 스토리">
-                    <p class="caption">[사진설명] 브랜드 스토리 이미지</p>
-                </div>
-            </div>
+                        <div class="section">
+                <h2>브랜드 스토리</h2>
+                <p class="body-text">
+                    <strong>
+                        집에서 만드는 와인, 꿈만 꾸셨나요?<br>
+                        이제 누구나 마스터가 될 수 있습니다.
+                    </strong>
+                    <br><br>
+                    저희는 수년간의 연구 끝에 가장 쉽고 완벽한 와인 메이킹 키트를 개발했습니다.
+                    복잡한 장비 없이, 오직 이 키트 하나로 당신의 공간을 근사한 와이너리로 만들어 보세요.
+                </p>
+                <div class="image-container">
+                    <img src="https://placehold.co/800x600/8B4513/ffffff?text=Brand+Story" alt="와인 메이커스 브랜드 스토리">
+                    <p class="caption">[사진설명] 브랜드 스토리 이미지</p>
+                </div>
+            </div>
 
-            <!-- ====================
-                 추가된 '원료 이야기' 섹션 - 위치 변경
-                 ==================== -->
-            <div class="section">
-                <h2>와인 키트의 시작</h2>
-                <p class="body-text">
-                    와인 키트의 핵심은 바로 <strong>칠레의 프리미엄 포도 농축액</strong>입니다.<br>
-                    따사로운 햇살을 머금고 자란 포도가 선박으로 안전하게 한국에 도착하기까지,<br>
-                    그 긴 여정을 거쳐 당신의 식탁으로 찾아옵니다.
-                </p>
-                <div class="image-container">
-                    <!-- 이미지 URL: 칠레에서 한국까지의 지도 이미지 -->
-                    <img src="https://placehold.co/800x400/8B4513/ffffff?text=Chile+to+Korea+Map" alt="칠레에서 한국까지의 여정을 보여주는 지도">
-                    <!-- 수정: 지도 이미지 캡션 추가 -->
-                    <p class="caption">[사진설명] 칠레 포도가 한국으로 오는 여정</p>
-                </div>
-            </div>
+                        <div class="section">
+                <h2>와인 키트의 시작</h2>
+                <p class="body-text">
+                    와인 키트의 핵심은 바로 <strong>칠레의 프리미엄 포도 농축액</strong>입니다.<br>
+                    따사로운 햇살을 머금고 자란 포도가 선박으로 안전하게 한국에 도착하기까지,<br>
+                    그 긴 여정을 거쳐 당신의 식탁으로 찾아옵니다.
+                </p>
+                <div class="image-container">
+                                        <img src="https://placehold.co/800x400/8B4513/ffffff?text=Chile+to+Korea+Map" alt="칠레에서 한국까지의 여정을 보여주는 지도">
+                                        <p class="caption">[사진설명] 칠레 포도가 한국으로 오는 여정</p>
+                </div>
+            </div>
 
-            <hr>
+            <hr>
 
-            <!-- ====================
-                 제품 상세 - 위치 변경
-                 ==================== -->
-            <div class="section">
-                <h2>단 4단계, 15분 만에 완성!</h2>
-                <div class="image-container">
-                    <!-- 이미지 경로 수정: GitHub Pages에 올릴 때 상대 경로로 사용 -->
-                    <img src="https://placehold.co/800x600/A0522D/ffffff?text=4+Steps" alt="4단계 와인 만들기 과정">
-                    <p class="caption">키트 구성품을 준비하고, 농축액과 효모를 넣으면 끝.</p>
-                </div>
-                <p class="body-text"><strong>1단계.</strong> 키트 구성품을 모두 준비해 주세요.</p>
-                <div class="image-container">
-                    <!-- 이미지 경로 수정: GitHub Pages에 올릴 때 상대 경로로 사용 -->
-                    <img src="https://placehold.co/800x600/8B4513/ffffff?text=Step+1" alt="1단계: 구성품 준비">
-                    <p class="caption">[사진설명] 1단계: 구성품 준비</p>
-                </div>
-                <p class="body-text"><strong>2단계.</strong> 포도 농축액을 발효통에 붓습니다.</p>
-                <div class="image-container">
-                    <!-- 이미지 경로 수정: GitHub Pages에 올릴 때 상대 경로로 사용 -->
-                    <img src="https://placehold.co/800x600/8B4513/ffffff?text=Step+2" alt="2단계: 포도 농축액 붓기">
-                    <p class="caption">[사진설명] 2단계: 포도 농축액 붓기</p>
-                </div>
-                <p class="body-text"><strong>3단계.</strong> 와인 효모를 넣습니다.</p>
-                <div class="image-container">
-                    <!-- 이미지 경로 수정: GitHub Pages에 올 때 상대 경로로 사용 -->
-                    <img src="https://placehold.co/800x600/8B4513/ffffff?text=Step+3" alt="3단계: 와인 효모 넣기">
-                    <p class="caption">[사진설명] 3단계: 와인 효모 넣기</p>
-                </div>
-                <p class="body-text"><strong>4단계.</strong> 에어락을 설치하고 발효를 시작합니다.</p>
-                <div class="image-container">
-                    <!-- 이미지 경로 수정: GitHub Pages에 올릴 때 상대 경로로 사용 -->
-                    <img src="https://placehold.co/800x600/8B4513/ffffff?text=Step+4" alt="4단계: 에어락 설치 및 발효 시작">
-                    <p class="caption">[사진설명] 4단계: 에어락 설치 및 발효 시작</p>
-                </div>
-            </div>
-            
-            <hr>
-            
-            <!-- ====================
-                 '이럴 때 사용하세요' 섹션 - 레이아웃 변경
-                 ==================== -->
-            <div class="section">
-                <h2>이럴 때 사용하세요</h2>
-            </div>
-            
-            <div class="section">
-                 <h3>특별한 홈 파티</h3>
-                 <p style="font-size: 0.9em;">직접 만든 와인으로 친구들을 초대해 특별한 추억을 만들어보세요.</p>
-                 <div class="image-container">
-                    <img src="https://placehold.co/800x600/5C6BC0/ffffff?text=Home+Party" alt="홈 파티" style="width: 100%; height: auto; object-fit: cover; border-radius: 4px;">
-                    <p class="caption">직접 만든 와인으로 친구들을 초대해 특별한 추억을 만들어보세요.</p>
-                </div>
-            </div>
-            <hr>
-            
-            <div class="section">
-                <h3>색다른 취미 생활</h3>
-                <p style="font-size: 0.9em;">집에서 혼자 즐기기 좋은 취미를 찾고 있다면, 와인 메이킹 키트가 정답입니다.</p>
-                <div class="image-container">
-                    <img src="https://placehold.co/800x600/81C784/ffffff?text=Hobby" alt="취미 생활" style="width: 100%; height: auto; object-fit: cover; border-radius: 4px;">
-                    <p class="caption">집에서 혼자 즐기기 좋은 취미를 찾고 있다면, 와인 메이킹 키트가 정답입니다.</p>
-                </div>
-            </div>
-            <hr>
-
-            <div class="section">
-                <h3>정성이 담긴 선물</h3>
-                <p style="font-size: 0.9em;">직접 만들고 숙성시킨 와인으로 마음을 전해보세요. 세상에 하나뿐인 선물이 됩니다.</p>
-                <div class="image-container">
-                    <img src="https://placehold.co/800x600/D2B48C/ffffff?text=Present" alt="정성이 담긴 선물" style="width: 100%; height: auto; object-fit: cover; border-radius: 4px;">
-                    <p class="caption">직접 만들고 숙성시킨 와인으로 마음을 전해보세요. 세상에 하나뿐인 선물이 됩니다.</p>
-                </div>
-            </div>
-            <hr>
-
-            <!-- 추가된 항목 -->
-            <div class="section">
-                <h3>로맨틱한 데이트</h3>
-                <p style="font-size: 0.9em;">직접 만든 와인으로 연인과 특별한 데이트를 즐겨보세요.</p>
-                <div class="image-container">
-                     <img src="https://placehold.co/800x600/D2B48C/ffffff?text=Romantic+Date" alt="로맨틱한 데이트" style="width: 100%; height: auto; object-fit: cover; border-radius: 4px;">
-                     <p class="caption">직접 만든 와인으로 연인과 특별한 데이트를 즐겨보세요.</p>
-                </div>
-            </div>
-            <hr>
-
-            <div class="section">
-                <h3>일상 속 작은 힐링</h3>
-                <p style="font-size: 0.9em;">힘든 하루를 마치고, 나만의 와인 한 잔으로 온전한 힐링을 경험하세요.</p>
-                <div class="image-container">
-                     <img src="https://placehold.co/800x600/C0C0C0/000000?text=Daily+Healing" alt="일상 속 힐링" style="width: 100%; height: auto; object-fit: cover; border-radius: 4px;">
-                     <p class="caption">힘든 하루를 마치고, 나만의 와인 한 잔으로 온전한 힐링을 경험하세요.</p>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="section">
-                <h2>나만의 와인, 나만의 맛!</h2>
-                <p class="body-text">
-                    와인 효모는 포도 농축액의 당분을 먹고 알코올로 변환시킵니다.<br>
-                    발효 기간에 따라 달라지는 풍미와 알코올 도수를 즐겨보세요.<br>
-                    물의 양으로 알코올 도수도 조절할 수 있습니다.
-                </p>
-                <div class="image-container">
-                    <!-- 이미지 경로 수정: GitHub Pages에 올릴 때 상대 경로로 사용 -->
-                    <img src="https://placehold.co/800x600/A0522D/ffffff?text=Flavor+Graph" alt="와인 발효 기간에 따른 맛 변화 그래프">
-                    <p class="caption">[사진설명] 와인 발효 기간에 따른 맛 변화 그래프</p>
-                </div>
-                <!-- 수정: 완성된 와인 이미지 추가 -->
-                <div class="image-container">
-                    <img src="https://placehold.co/800x600/A0522D/ffffff?text=Finished+Wine+Bottle" alt="완성된 와인병 이미지">
-                    <p class="caption">[사진설명] 직접 만든 와인, 완성의 즐거움</p>
-                </div>
-            </div>
-            
-            <hr>
-
-            <!-- ====================
-                 추가된 '메이커 소개' 섹션
-                 ==================== -->
-            <div class="section">
-                <h2>메이커 소개</h2>
-                <p class="body-text">
-                    안녕하세요, '와인 메이커스'의 대표 김메이커입니다.<br>
-                    수년간의 연구 끝에 누구나 쉽고 완벽하게 즐길 수 있는 와인 키트를 만들게 되었습니다.<br>
-                    저희의 진심이 담긴 이 키트가 여러분의 삶에 특별한 즐거움이 되기를 바랍니다.
-                </p>
-                <div class="image-container">
-                    <!-- 메이커 이미지: 적절한 플레이스홀더 사용 -->
-                    <img src="https://placehold.co/800x600/6A5ACD/ffffff?text=Maker+Portrait" alt="와인 키트 메이커 사진">
-                    <p class="caption">[사진설명] 와인 키트 메이커 김메이커</p>
-                </div>
-            </div>
-
-            <hr>
-
-            <div class="section">
-                <h2>믿음과 신뢰, 진솔한 후기</h2>
-                <p class="body-text">와디즈 서포터들의 찐 후기가 증명합니다.</p>
-                <div class="review-flex-container">
-                    <div class="review-box">
-                        <!-- 이미지 경로 수정: GitHub Pages에 올릴 때 상대 경로로 사용 -->
-                        <img src="https://placehold.co/800x600/D3D3D3/000000?text=Review+1" alt="김*민님 후기 사진" class="review-image">
-                        <p class="review-text">"와인 만드는데 이렇게 쉬울 줄 몰랐어요! 맛도 정말 좋네요."</p>
-                        <p class="review-author">- 김*민님</p>
-                    </div>
-                    
-                    <div class="review-box">
-                        <!-- 이미지 경로 수정: GitHub Pages에 올릴 때 상대 경로로 사용 -->
-                        <img src="https://placehold.co/800x600/D3D3D3/000000?text=Review+2" alt="박*지님 후기 사진" class="review-image">
-                        <p class="review-text">"친구들한테 선물했더니 다들 너무 좋아해요. 특별한 경험이었습니다."</p>
-                        <p class="review-author">- 박*지님</p>
-                    </div>
-                    
-                    <div class="review-box">
-                        <!-- 이미지 경로 수정: GitHub Pages에 올릴 때 상대 경로로 사용 -->
-                        <img src="https://placehold.co/800x600/D3D3D3/000000?text=Review+3" alt="이*석님 후기 사진" class="review-image">
-                        <p class="review-text">"처음 해보는 도전이었는데 성공해서 뿌듯해요. 다음엔 다른 맛도 도전해 보려고요!"</p>
-                        <p class="review-author">- 이*석님</p>
-                    </div>
-                </div>
-            </div>
-
-            <hr>
-
-            <!-- ====================
-                 복구된 FAQ 섹션
-                 ==================== -->
-            <div class="section">
-                <h2>자주 묻는 질문</h2>
-                <div class="faq-item">
-                    <div class="faq-question">Q. 와인을 만드는 데 시간이 얼마나 걸리나요?</div>
-                    <div class="faq-answer">
-                        A. 와인 키트 준비는 15분이면 충분하지만, 발효 및 숙성 기간에 따라 풍미와 알코올 도수가 달라집니다.<br>
-                        - **1일차:** 효모가 활성화되며 발효가 시작됩니다.
-                        - **1주일:** 알코올 도수 5-7%로 가볍고 프루티한 맛이 납니다.
-                        - **2-3주:** 알코올 도수 10-12%로 부드럽고 깊은 맛이 납니다.
-                        - **3-4주:** 알코올 도수 12-14%로 풍성하고 풀바디한 맛이 납니다.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Q. 어떤 포도 품종이 들어있나요?</div>
-                    <div class="faq-answer">
-                        A. 최고급 카베르네 소비뇽 포도 농축액을 사용합니다.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Q. 보관은 어떻게 해야 하나요?</div>
-                    <div class="faq-answer">
-                        A. 직사광선을 피해 서늘한 곳에 보관해 주세요.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Q. 알코올 도수 조절이 가능한가요?</div>
-                    <div class="faq-answer">
-                        A. 네, 물의 양을 조절하여 도수를 맞출 수 있습니다.
-                    </div>
-                </div>
-            </div>
-
-            <hr>
-
-        <!-- ====================
-             푸터 (회사 정보)
-             ==================== -->
-        <footer class="footer">
-            <p>회사명: 와인 메이커스</p>
-            <p>주소: 서울특별시 강남구 테헤란로 123</p>
-            <p>대표: 김메이커</p>
-            <p>사업자등록번호: 123-45-67890</p>
-            <p>Copyright &copy; 2024. All Rights Reserved.</p>
-        </footer>
-
-        <!-- 추가된 JavaScript: '자세히 보기' 버튼 클릭 시 상세 내용 표시 및 스크롤 -->
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const ctaButton = document.querySelector('.main-cta-button');
-                const productDetails = document.getElementById('product-details');
-                
-                // '자세히 보기' 버튼 클릭 이벤트 리스너
-                ctaButton.addEventListener('click', (event) => {
-                    event.preventDefault(); // 기본 앵커 이동 동작 취소
-                    
-                    // [버그 수정] mainContent가 아닌 productDetails를 보이게 함
-                    productDetails.style.display = 'block';
-
-                    // 스무스하게 해당 섹션으로 스크롤
-                    productDetails.scrollIntoView({ behavior: 'smooth' });
-                });
-                
-                // FAQ 토글 기능
-                const faqQuestions = document.querySelectorAll('.faq-question');
-                faqQuestions.forEach(question => {
-                    question.addEventListener('click', () => {
-                        const answer = question.nextElementSibling;
-                        document.querySelectorAll('.faq-answer').forEach(ans => {
-                            if (ans !== answer) {
-                                ans.style.display = 'none';
-                            }
-                        });
-                        if (answer.style.display === 'block') {
-                            answer.style.display = 'none';
-                        } else {
-                            answer.style.display = 'block';
-                        }
-                    });
-                });
-            });
-        </script>
-    </body>
-</html>
+                        <div class="section">
+                <h2>단 4단계, 15분 만에 완성!</h2>
+                <div class="image-container">
+                                        <img src="https://placehold.co/800x600/A0522D/ffffff?text=4+Steps" alt="4단계 와인 만들기 과정">
+                    <p class="caption">키트 구성품을 준비하고, 농축액과 효모를 넣으면 끝.</p>
+                </div>
+                <p class="body-text"><strong>1단계.</strong> 키트 구성품을 모두 준비해 주세요.</p>
+                <div class="image-container">
+                                        <img src="https://placehold.co/800x600/8B4513/ffffff?text=Step+1" alt="1단계: 구성품 준비">
+                    <p class="caption">[사진설명]
